@@ -28,7 +28,8 @@ public class DoctorService {
     }
 
     public List<Doctor> findDoctorBySpecialization(String specialization) {
-        return doctorRepository.findBySpecialization(specialization);
+        String ans = specialization.substring(0, 1).toUpperCase() + specialization.substring(1);;
+        return doctorRepository.findBySpecialization(ans);
     }
 
     public String checkDoctorAvailability(Long id, LocalDateTime appointmentTime) {
